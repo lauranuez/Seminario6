@@ -42,7 +42,7 @@ jobs:
         run: npm run build:ci
       
         
-      #Cargar artefactos de compilacion
+      #Cargar artefactos de compilacion -> para almacenar los datos de el job
       - name: Archive build
         if: success() #Solo se crea si todos los pasos anteriores son correctos
         uses: actions/upload-artifact@v1

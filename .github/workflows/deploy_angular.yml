@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: seminarioEA   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_NAME: client   # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './dist/client'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14'                # set this to the node version to use
 
 
@@ -22,7 +22,7 @@ jobs:
   # This workflow contains a single job called "build"
   build-and-deploy:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

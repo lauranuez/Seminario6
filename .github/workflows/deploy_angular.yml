@@ -1,6 +1,6 @@
 # Workflow para desplegar la aplicación de angular
 
-name: runAngular
+name: deploy_angular
 
 # Controls when the workflow will run
 on:
@@ -51,21 +51,21 @@ jobs:
           path: dist
           
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: [build] #Hay que esperar a que termine el job llamado build
 
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v1
       with:
-        name: webapp-artifact
+        name: deploy_dist
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with: 
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        slot-name: 'producction'
+        slot-name: 'production'
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}   
        

@@ -36,10 +36,10 @@ jobs:
           node-version: '14'
       #instala dependencias
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       
       - name: Build
-        run: npm run build:ci
+        run: npm run build -- --prod
       
         
       #Cargar artefactos de compilacion -> para almacenar los datos de el job
@@ -65,7 +65,6 @@ jobs:
       uses: azure/webapps-deploy@v1
       with: 
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        slot-name: 'production'
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}   
        

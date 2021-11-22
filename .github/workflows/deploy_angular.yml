@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: seminarioEA   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: './dist'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_NAME: client   # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './dist/client'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14'                # set this to the node version to use
 
 

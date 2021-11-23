@@ -37,10 +37,10 @@ jobs:
       #instala dependencias
       - name: Install dependencies
         run: npm install
-      
+      #Build del proyecto
       - name: Build
         run: npm run build 
-          
+      #Desploy to Azure
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v1
         with: 
